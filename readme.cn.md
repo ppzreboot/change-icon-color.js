@@ -1,17 +1,18 @@
+
 # change-icon-color.js
 
-[中文](./readme.cn.md) | [demo](https://ppzreboot.github.io/change-icon-color.js/)
+[English](./readme.md) | [demo](https://ppzreboot.github.io/change-icon-color.js/)
 
-+ Change the color of monochrome images
-+ Multiple output formats
++ 修改纯色图片的颜色
++ 多种输出格式
 
 ``` bash
 npm install change-icon-color
 ```
 
-## Usage
+## 用法
 
-### Example: url -> url
+### 案例: url -> url
 ``` ts
 import { url_2_url } from 'change-icon-color'
 import blue_img from './blue-img.png'
@@ -29,7 +30,7 @@ img.src = red_img
 
 ### API
 
-##### Types
+##### 类型
 ``` ts
 interface I_color {
   r: number
@@ -39,9 +40,9 @@ interface I_color {
 }
 ```
 
-##### Out of the box
+##### 开箱即用
 
-The following [ImageEncodeOptions](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/convertToBlob#options) are parameters for `OffscreenCanvas.convertToBlob()`
+下面的 [ImageEncodeOptions](https://developer.mozilla.org/en-US/docs/Web/API/OffscreenCanvas/convertToBlob#options) 是 `OffscreenCanvas.convertToBlob()` 的参数
 
 ``` ts
 function file_2_file(input: File, color: I_color, encode_opts?: ImageEncodeOptions): Promise<Blob>
@@ -53,7 +54,7 @@ function url_2_url(input: string, color: I_color, encode_opts?: ImageEncodeOptio
 function img_2_img(img: HTMLImageElement, color: I_color, encode_opts?: ImageEncodeOptions): Promise<HTMLImageElement>
 ```
 
-##### Precise Requirements
+##### 精准需求
 
 ``` ts
 function img_2_img_data(img: HTMLImageElement): ImageData
