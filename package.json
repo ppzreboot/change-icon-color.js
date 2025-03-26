@@ -11,13 +11,15 @@
   "license": "UNLICENSED",
   "scripts": {
     "build": "node script/build.js",
+    "demo": "node script/demo.js",
     "demo-react": "node script/demo-react.js",
-    "demo": "node script/demo.js"
+    "demo-deploy": "gh-pages -d demo/react/dist"
   },
   "devDependencies": {
     "@types/react": "^19.0.12",
     "@types/react-dom": "^19.0.4",
     "esbuild": "^0.25.1",
+    "gh-pages": "^6.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   }
