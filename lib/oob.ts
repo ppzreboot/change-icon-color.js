@@ -16,7 +16,7 @@ async function file_2_file(input: File, color: I_color, encode_opts?: ImageEncod
 }
 
 export
-async function img_2_url(input: HTMLImageElement, color: I_color, encode_opts?: ImageEncodeOptions) {
+async function img_2_url(input: HTMLImageElement, color: I_color, encode_opts?: ImageEncodeOptions): Promise<string> {
   const canvas = img_data_2_canvas(
     change_img_data_color(
       img_2_img_data(input),
@@ -45,7 +45,7 @@ async function load_img(url: string): Promise<HTMLImageElement> {
 }
 
 export
-async function img_2_img(img: HTMLImageElement, color: I_color, encode_opts?: ImageEncodeOptions) {
+async function img_2_img(img: HTMLImageElement, color: I_color, encode_opts?: ImageEncodeOptions): Promise<HTMLImageElement> {
   const url = await img_2_url(img, color, encode_opts)
   return await load_img(url)
 }
