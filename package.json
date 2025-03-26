@@ -1,0 +1,20 @@
+{
+  "name": "web-lib-template",
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    ".": "./lib/index.js"
+  },
+  "scripts": {
+    "build": "node script/build.js",
+    "demo-react": "node script/demo-react.js",
+    "demo": "node script/demo.js"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.12",
+    "@types/react-dom": "^19.0.4",
+    "esbuild": "^0.25.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}
