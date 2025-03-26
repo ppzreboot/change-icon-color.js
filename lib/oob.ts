@@ -4,6 +4,18 @@ import { img_2_img_data, change_img_data_color, img_data_2_canvas } from './core
 import { I_color } from './type'
 
 export
+async function file_2_file(input: File, color: I_color, encode_opts?: ImageEncodeOptions): Promise<Blob> {
+  const source = URL.createObjectURL(input)
+  const img = await load_img(source)
+  return await img_data_2_canvas(
+    change_img_data_color(
+      img_2_img_data(img),
+      color,
+    )
+  ).convertToBlob(encode_opts)
+}
+
+export
 async function img_2_url(input: HTMLImageElement, color: I_color, encode_opts?: ImageEncodeOptions) {
   const canvas = img_data_2_canvas(
     change_img_data_color(

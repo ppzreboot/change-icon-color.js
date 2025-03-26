@@ -1,9 +1,9 @@
 {
-  "name": "web-lib-template",
+  "name": "change-icon-color",
   "version": "0.0.0",
   "type": "module",
   "exports": {
-    ".": "./lib/index.js"
+    ".": "./lib/mod.js"
   },
   "scripts": {
     "build": "node script/build.js",
