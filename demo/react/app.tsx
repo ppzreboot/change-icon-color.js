@@ -4,20 +4,26 @@ import {
   url_2_url,
 } from 'change-icon-color'
 
+type I_format = 'png' | 'jpeg' | 'webp' | 'bmp'
+
 export
 function App() {
   const [file, set_file] = useState<File | null>(null)
   const [color, set_color] = useState('#ff0000')
+  const [format, set_format] = useState<I_format>('png')
 
   const [output, set_output] = useState<string | null>(null)
   useEffect(() => {
     if (file === null)
       return
     const input = URL.createObjectURL(file)
-    url_2_url(input, hex2rgba(color))
+    url_2_url(input, hex2rgba(color), {
+      type: `image/${format}`,
+    })
       .then(set_output)
       .catch(console.error)
-  }, [file, color])
+  }, [file, color, format])
+
   return <>
     <h1>Change Icon's Color</h1>
 
@@ -27,6 +33,7 @@ function App() {
       accept='image/*'
       onChange={evt => set_file(evt.target.files?.[0] ?? null)}
     />
+
     <label>Please Select a Color</label>
     <input
       type='color'
@@ -34,7 +41,21 @@ function App() {
       onChange={evt => set_color(evt.target.value)}
     />
 
-    {output && <img src={output} />}
+    <label>Please Select Image Format</label>
+    <select
+      value={format}
+      onChange={evt => set_format(evt.target.value as I_format)}
+    >
+      <option value='png'>PNG</option>
+      <option value='jpeg'>JPEG</option>
+      <option value='webp'>WEBP</option>
+      <option value='bmp'>BMP</option>
+    </select>
+
+    {output && <>
+      <img src={output} />
+      <a href={output} download='change-icon-color'>Download</a>
+    </>}
   </>
 }
 
