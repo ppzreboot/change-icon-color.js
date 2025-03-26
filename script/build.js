@@ -2,7 +2,7 @@ import { build } from 'esbuild'
 
 build({
   entryPoints: [
-    'lib/mod.ts',
+    'lib/*.ts',
     // 'lib/react.tsx',
   ],
   outdir: 'lib',

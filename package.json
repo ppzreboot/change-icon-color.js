@@ -5,6 +5,10 @@
   "exports": {
     ".": "./lib/mod.js"
   },
+  "files": [
+    "lib"
+  ],
+  "license": "UNLICENSED",
   "scripts": {
     "build": "node script/build.js",
     "demo-react": "node script/demo-react.js",
