@@ -4,7 +4,7 @@
 [English](./readme.md) | [demo](https://ppzreboot.github.io/change-icon-color.js/)
 
 + 修改纯色图片的颜色
-+ 多种输出格式
++ [多种输出格式](https://developer.mozilla.org/en-us/docs/web/api/offscreencanvas/converttoblob#options)
 
 ``` bash
 npm install change-icon-color

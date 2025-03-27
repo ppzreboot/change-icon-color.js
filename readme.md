@@ -3,7 +3,7 @@
 [中文](./readme.cn.md) | [demo](https://ppzreboot.github.io/change-icon-color.js/)
 
 + Change the color of monochrome images
-+ Multiple output formats
++ [Multiple output formats](https://developer.mozilla.org/en-us/docs/web/api/offscreencanvas/converttoblob#options)
 
 ``` bash
 npm install change-icon-color

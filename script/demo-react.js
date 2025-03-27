@@ -7,7 +7,7 @@ main()
 async function main() {
   const ctx = await context({
     entryPoints: ['demo/react/main.tsx'],
-    outdir: 'demo/react/dist/_c',
+    outdir: 'demo/react/dist/compiled',
     bundle: true,
     logLevel: 'debug',
   })
